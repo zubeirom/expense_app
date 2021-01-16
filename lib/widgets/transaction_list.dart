@@ -35,11 +35,14 @@ class TransactionList extends StatelessWidget {
                             child: FittedBox(
                                 child: Text('\$${currentTransaction.amount}')),
                           )),
-                      title: Text(
-                        currentTransaction.title,
-                      ),
+                      title: Text(currentTransaction.title,
+                          style: TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontWeight: FontWeight.bold)),
                       subtitle: Text(
-                          DateFormat.yMMMd().format(currentTransaction.date)),
+                        DateFormat.yMMMd().format(currentTransaction.date),
+                        style: TextStyle(fontFamily: 'Quicksand'),
+                      ),
                     ),
                   );
                 },
