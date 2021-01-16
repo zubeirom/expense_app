@@ -71,6 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
         });
   }
 
+  void _deleteTransaction(String id) {
+    setState(() {
+      _userTransactions.removeWhere((element) => element.id == id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,12 +90,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Chart(_recentTransactions),
-              TransactionList(_userTransactions)
-            ]),
+        child:
+            Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          Chart(_recentTransactions),
+          TransactionList(_userTransactions, _deleteTransaction)
+        ]),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
