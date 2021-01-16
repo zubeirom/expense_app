@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+
 import './widgets/chart.dart';
 
 import './widgets/new_transaction.dart';
@@ -6,6 +8,9 @@ import 'package:flutter/material.dart';
 import './models/transaction.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(MyApp());
 }
 
