@@ -14,7 +14,7 @@ class TransactionList extends StatelessWidget {
         child: transactions.isEmpty
             ? Column(children: [
                 Text('No transaction added yet!',
-                    style: Theme.of(context).textTheme.headline6),
+                    style: TextStyle(fontFamily: 'Quicksand')),
                 SizedBox(height: 20),
                 Container(
                     height: 200,
@@ -39,6 +39,7 @@ class TransactionList extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
+                              fontFamily: 'Quicksand',
                               color: Theme.of(context).primaryColor),
                         )),
                     Column(
@@ -46,10 +47,14 @@ class TransactionList extends StatelessWidget {
                         children: [
                           Text(
                             currentTransaction.title,
-                            style: Theme.of(context).textTheme.headline6,
+                            style: TextStyle(
+                                fontFamily: 'Quicksand',
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
                           ),
                           Text(DateFormat().format(currentTransaction.date),
-                              style: TextStyle(color: Colors.grey))
+                              style: TextStyle(
+                                  color: Colors.grey, fontFamily: 'Quicksand'))
                         ])
                   ]));
                 },
